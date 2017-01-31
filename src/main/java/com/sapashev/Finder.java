@@ -22,6 +22,11 @@ public class Finder {
         new Finder().start(args);
     }
 
+    /**
+     * Starts uer request processing.
+     * @param args - command-line arguments.
+     * @throws IOException
+     */
     public void start(String[] args) throws IOException {
         String keyArgs = Arrays.stream(args).collect(Collectors.joining(" "));
         if(isAllKeys(keyArgs)){
