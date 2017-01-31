@@ -1,8 +1,7 @@
+import com.sapashev.Finder;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import java.io.IOException;
 
 import static org.hamcrest.core.Is.is;
 
