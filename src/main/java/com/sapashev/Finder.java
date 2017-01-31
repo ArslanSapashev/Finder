@@ -79,9 +79,10 @@ public class Finder {
      * @throws IOException
      */
     public void saveToFile (List<Path> files, String logFile) throws IOException {
+        String separator = System.getProperty("line.separator");
         try(BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(logFile))){
             for(Path p : files){
-                out.write((p.toString() + "\r\n").getBytes(StandardCharsets.UTF_8));
+                out.write((p.toString() + separator).getBytes(StandardCharsets.UTF_8));
             }
         }
     }
