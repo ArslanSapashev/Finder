@@ -28,8 +28,7 @@ public class Finder {
      * @throws IOException
      */
     public void start(String[] args) throws IOException {
-        String keyArgs = Arrays.stream(args).collect(Collectors.joining(" "));
-        if(isAllKeys(keyArgs)){
+        if(isAllKeys(args)){
             if(args[4].equals("-m")){
                 args[3] = maskToRegEx(args[3]);
             }
@@ -42,11 +41,12 @@ public class Finder {
 
     /**
      * Checks are all keys present.
-     * @param toCheck - string to check
+     * @param args - command line arguments.
      * @return true - all keys are present, false - otherwise.
      * @throws IOException
      */
-    public boolean isAllKeys (String toCheck) throws IOException {
+    public boolean isAllKeys (String[] args) throws IOException {
+        String toCheck = String.join(" ", args);
         return toCheck.matches("-d\\s.+\\s(-m|-f|-r)\\s-o\\s.+\\.txt$");
     }
 
